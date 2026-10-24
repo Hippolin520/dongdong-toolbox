@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: dongdong-document-toolbox
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: '1'
+      - key: WEB_CONCURRENCY
+        value: '1'
